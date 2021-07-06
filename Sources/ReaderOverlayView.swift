@@ -98,7 +98,9 @@ public final class ReaderOverlayView: UIView {
     layer.addSublayer(overlay)
   }
 
-  var rectOfInterest: CGRect = CGRect(x: 0, y: 0, width: 1, height: 1) {
+  var rectOfInterest: CGRect = CGRect(x: 0, y: 0, width: 1, height: 1)
+
+  var outlinedRect: CGRect = CGRect(x: 0, y: 0, width: 1, height: 1) {
     didSet {
       setNeedsDisplay()
     }
@@ -106,10 +108,10 @@ public final class ReaderOverlayView: UIView {
 
   public override func draw(_ rect: CGRect) {
     let innerRect = CGRect(
-      x: rect.width * rectOfInterest.minX,
-      y: rect.height * rectOfInterest.minY,
-      width: rect.width * rectOfInterest.width,
-      height: rect.height * rectOfInterest.height
+      x: rect.width * outlinedRect.minX,
+      y: rect.height * outlinedRect.minY,
+      width: rect.width * outlinedRect.width,
+      height: rect.height * outlinedRect.height
     )
 
     overlay.path = UIBezierPath(roundedRect: innerRect, cornerRadius: 5).cgPath

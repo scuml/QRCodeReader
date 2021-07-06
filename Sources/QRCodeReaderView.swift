@@ -113,7 +113,12 @@ final public class QRCodeReaderView: UIView, QRCodeReaderDisplayable {
     }
 
     if let readerOverlayView = overlayView as? ReaderOverlayView {
+      var outlineRectOverride = builder.rectOfInterest
+      if let outlinedRect = builder.outlinedRect{
+        outlineRectOverride = outlinedRect
+      }
       readerOverlayView.rectOfInterest = builder.rectOfInterest
+      readerOverlayView.outlinedRect =  outlineRectOverride
     }
   }
 

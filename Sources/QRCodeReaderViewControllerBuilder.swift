@@ -123,6 +123,14 @@ public final class QRCodeReaderViewControllerBuilder {
     }
   }
 
+  /**
+   Specifies where to draw the rect on the screen.
+
+   If nil, rect will be drawn to frame of rectOfInterest
+
+  */
+  public var outlinedRect: CGRect? = nil
+
   // MARK: - Initializing a Flap View
 
   /**
