@@ -7,9 +7,9 @@
   <a href="http://cocoadocs.org/docsets/QRCodeReader.swift/"><img alt="Version" src="https://cocoapod-badges.herokuapp.com/v/QRCodeReader.swift/badge.svg"/></a>
 </p>
 
-**QRCodeReader.swift** is a simple code reader (initially only QRCode) for iOS in Swift. It is based on the `AVFoundation` framework from Apple in order to replace ZXing or ZBar for iOS 8.0 and over. It can decode these [format types](https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVMetadataMachineReadableCodeObject_Class/index.html#//apple_ref/doc/constant_group/Machine_Readable_Object_Types).
+**QRCodeReader** is a simple code reader (initially only QRCode) for iOS in Swift. It is based on the `AVFoundation` framework from Apple in order to replace ZXing or ZBar for iOS 8.0 and over. It can decode these [format types](https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVMetadataMachineReadableCodeObject_Class/index.html#//apple_ref/doc/constant_group/Machine_Readable_Object_Types).
 
-It provides a default view controller to display the camera view with the scan area overlay and it also provides a button to switch between the front and the back cameras.
+It provides a default view controller to display the camera view with the scan area overlay and a button to switch between the front and the back cameras.
 
 <p align="center">
   <img src="http://yannickloriot.com/resources/qrcodereader.swift-screenshot.jpg" alt="QRCodeReader.swift screenshot">
@@ -27,7 +27,7 @@ It provides a default view controller to display the camera view with the scan a
 
 ## Usage
 
-In iOS10+, you will need first to reasoning about the camera use. For that you'll need to add the **Privacy - Camera Usage Description** *(NSCameraUsageDescription)* field in your Info.plist:
+**IMPORTANT** In iOS10+, you will need first to provide a reason to use the camera.  Add **Privacy - Camera Usage Description** *(NSCameraUsageDescription)* field in your Info.plist:
 
 <p align="center">
   <img alt="privacy - camera usage description" src="https://cloud.githubusercontent.com/assets/798235/19264826/bc25b8dc-8fa2-11e6-9c13-17926384ebd1.png" height="28">
@@ -133,85 +133,15 @@ lazy var reader: QRCodeReaderViewController = {
   }()
 ```
 
-### Installation
+#### Installation with Swift Package Manager
 
-The recommended approach to use _QRCodeReaderViewController_ in your project is using the [CocoaPods](http://cocoapods.org/) package manager, as it provides flexible dependency management and dead simple installation.
 
-#### CocoaPods
+Add `https://github.com/scuml/QRCodeReader` as the package repository in Swift Package Manager.
 
-Install CocoaPods if not already available:
-
-```bash
-$ [sudo] gem install cocoapods
-$ pod setup
-```
-Go to the directory of your Xcode project, and Create and Edit your Podfile and add _QRCodeReader.swift_ to your corresponding `TargetName`:
-
-```bash
-$ cd /path/to/MyProject
-$ touch Podfile
-$ edit Podfile
-source 'https://github.com/CocoaPods/Specs.git'
-platform :ios, '8.0'
-use_frameworks!
-
-target 'TargetName' do
-    pod 'QRCodeReader.swift', '~> 10.1.0'
-end
-```
-
-Install into your project:
-
-```bash
-$ pod install
-```
-
-Open your project in Xcode from the .xcworkspace file (not the usual project file):
-
-```bash
-$ open MyProject.xcworkspace
-```
-
-You can now `import QRCodeReader` framework into your files.
-
-#### Carthage
-
-[Carthage](https://github.com/Carthage/Carthage) is a decentralized dependency manager that automates the process of adding frameworks to your Cocoa application.
-
-You can install Carthage with [Homebrew](http://brew.sh/) using the following command:
-
-```bash
-$ brew update
-$ brew install carthage
-```
-
-To integrate `QRCodeReader` into your Xcode project using Carthage, specify it in your `Cartfile` file:
-
-```ogdl
-github "yannickl/QRCodeReader.swift" >= 10.1.0
-```
-
-#### Swift Package Manager
-
-You can use [The Swift Package Manager](https://swift.org/package-manager) to install `QRCodeReader.swift` by adding the proper description to your `Package.swift` file:
-
-```swift
-import PackageDescription
-
-let package = Package(
-    name: "YOUR_PROJECT_NAME",
-    targets: [],
-    dependencies: [
-        .Package(url: "https://github.com/yannickl/QRCodeReader.swift.git", versions: "10.1.0" ..< Version.max)
-    ]
-)
-```
-
-Note that the [Swift Package Manager](https://swift.org/package-manager) is still in early design and development, for more information checkout its [GitHub Page](https://github.com/apple/swift-package-manager).
 
 #### Manually
 
-[Download](https://github.com/YannickL/QRCodeReader.swift/archive/master.zip) the project and copy the `QRCodeReader` folder into your project to use it in.
+[Download](https://github.com/scuml/QRCodeReader.swift/archive/master.zip) the project and copy the `QRCodeReader` folder into your project to use it in.
 
 ## Contact
 
